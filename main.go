@@ -19,9 +19,9 @@ type PanicTransformer struct {
 func (a *PanicTransformer) Transform(ctx context.Context, keys []string, d sourcetransformer.Datum) sourcetransformer.Messages {
 	// Increment the counter atomically
 	newCount := atomic.AddUint64(&a.counter, 1)
-	// Check if the counter is a multiple of 500
-	if newCount%500 == 0 {
-		panic("Counter reached a multiple of 500")
+	// Check if the counter is a multiple of 1000
+	if newCount%1000 == 0 {
+		panic("Counter reached a multiple of 1000")
 	}
 	// Update message event time to time.Now()
 	eventTime := time.Now()

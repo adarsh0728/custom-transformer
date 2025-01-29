@@ -18,6 +18,7 @@
 # vendor/
 **/dist
 
+dist/
 # Go workspace file
 go.work
 .idea/
